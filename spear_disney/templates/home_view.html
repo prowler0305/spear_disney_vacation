@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% from 'helpers.html' import display_form_errors %}
+
+<body>
+{% block content %}
+    <div class="container">
+        <div class="jumbotron text-white border-0">
+            <h1 class="display-4 text-center">The Spear Family Disney World Planner</h1>
+            <div class="row">
+                <div class="col-2 float-right"></div>
+                <div class="col-10 float-right">
+                    <p class="lead">
+                        Christian and Sarah,
+                    </p>
+                    <p class="lead text-white">
+                        Eight years ago, we took a trip with Christian that started a dream within us. Three years ago, we took
+                        a trip as a family of four that made us realize that dream could be more than just a dream. The memories we
+                        made on these trips will last a lifetime but we wanted more than just memories. Mom and Dad are never happier than when the
+                        two of you are happy, and for this family, Disney is our happy place. We know this past year has been rough, there have been
+                        challenges that none of us could have ever imagined. The two of you faced those challenges head on, never
+                        complained and came out even stronger on the other side. We are so proud of everything you both have accomplished
+                        and you've both worked so hard to get to where you are now. We know as your parents we are busy and working ALOT.
+                        But, we work hard so that we may play equally hard. So we took an opportunity that allows us to play hard,
+                        every year in our favorite place, for the next 45 years. We are so excited to make so many more memories with you,
+                        and can't wait to see what this new adventure has in store for us.
+                    </p>
+                </div>
+            </div>
+            <h3 class="display-3 text-white">Here's to a lifetime of fun, family, and memories in our new home away from home...</h3>
+        </div>
+
+        <div class="row">
+            <div class="col-6"><img src="{{url_for('static', filename='dvc_logo.jpg')}}" height="200px"></div>
+            <div class="col-6"><img src="{{url_for('static', filename='poly_resort.jpg')}}" height="200px"></div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="w-50 mx-auto">
+                <a class="text-white" href="http://distickers.com/ticker/">
+                    <img class="bg-white" src="http://distickers.com/ticker/tickers/p07jex17xxhcvmty.png" alt="DIStickers.com Ticker"
+                         border="0" width="100%"/>
+                </a>
+            </div>
+        </div>
+        <hr>
+        <form method="POST" name="christianSuggestions">
+            {{christian_suggest_form.hidden_tag()}}
+            <div class="row text-info">
+                <div class="col-auto">
+                    <div class="form-group row">
+                        {{ christian_suggest_form.suggestion.label(class="sr_only") }}
+                        {{ christian_suggest_form.suggestion(class='form-control') }}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {{ christian_suggest_form.submit(class='btn btn-success') }}
+            </div>
+            {{ display_form_errors(christian_suggest_form) }}
+        </form>
+    </div>
+{% endblock content%}
+</body>

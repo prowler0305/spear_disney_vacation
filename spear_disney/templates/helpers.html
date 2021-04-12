@@ -1,0 +1,32 @@
+{% macro flash_alert(filter_on) -%}
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category_info, message in messages %}
+                {% if category_info.identifier == filter_on %}
+                    <div class="row mt-1">
+                        <div class="alert alert-{{ category_info.color }} alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                                <span aria-hidden="true">&times</span>
+                            </button>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+{%- endmacro %}
+
+{% macro display_form_errors(form_name) %}
+    {% if form_name.errors | length > 0 %}
+        {% for field, errors in form_name.errors.items() %}
+            <div class="alert alert-danger alert-dismissible mt-2" role="alertdialog">
+                <ul class="list-group">
+                    {% for error in errors %}
+                        <li class="list-group-item-danger">{{ form_name[field].label }}: {{ error }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endmacro %}

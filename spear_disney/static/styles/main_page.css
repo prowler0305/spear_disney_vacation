@@ -1,0 +1,9 @@
+body {
+    /*background-image: url(../disney_castle_bg.jpg) no-repeat center center fixed;*/
+    background: url("../disney_castle_bg.jpg") center center fixed;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
