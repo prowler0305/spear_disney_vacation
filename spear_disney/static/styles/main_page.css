@@ -1,9 +1,33 @@
 body {
-    /*background-image: url(../disney_castle_bg.jpg) no-repeat center center fixed;*/
+    /*background: linear-gradient(rgba(255,255,255,.10), rgba(255,255,255,.25)), url("../disney_castle_bg.jpg") center center fixed;*/
     background: url("../disney_castle_bg.jpg") center center fixed;
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+}
+
+.text-purple {
+    color: purple;
+}
+.text-blue {
+    color: blue;
+}
+.border-purple {
+    border-width: 3px;
+    border-style: solid;
+    border-color: purple;
+}
+.bg-purple {
+    background-color: purple;
+    color: white;
+}
+.bg-gradient-purple {
+    background: linear-gradient(to bottom, white, purple);
+    color: white;
+}
+
+.bg-white-opaque {
+    background-color: rgba(255, 255, 255, 0.5);
 }
