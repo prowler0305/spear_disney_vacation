@@ -5,4 +5,12 @@
   "repository": "https://github.com/prowler0305/spear_disney_vacation",
   "keywords": ["python", "flask" ],
   "addons": [ "heroku-postgresql" ],
+  "env": {
+    "app_env": "config.ProductionConfig",
+    "db_url": "localhost",
+    "db_port": "5433",
+    "db_user": "sarah",
+    "db_pass": "sarah1129",
+    "db_name": "dvc"
+  }
 }
