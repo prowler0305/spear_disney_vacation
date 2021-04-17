@@ -14,6 +14,8 @@ class HomeView(MethodView):
         self.disney_template_render_dict = dict(suggest_form=self.suggest_form)
         self.disney_template_render_dict["christian_suggestions"] = Suggestions.query.filter_by(by_who="christian").all()
         self.disney_template_render_dict["sarah_suggestions"] = Suggestions.query.filter_by(by_who="sarah").all()
+        self.disney_template_render_dict["mom_suggestions"] = Suggestions.query.filter_by(by_who="mom").all()
+        self.disney_template_render_dict["dad_suggestions"] = Suggestions.query.filter_by(by_who="dad").all()
 
     @templated()
     def get(self):
