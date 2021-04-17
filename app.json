@@ -1,0 +1,8 @@
+{
+  "name": "Spear Family Disney App",
+  "description": "A web app to allow the family to plan our disney trips",
+  "image": "heroku/python",
+  "repository": "https://github.com/prowler0305/spear_disney_vacation",
+  "keywords": ["python", "flask" ],
+  "addons": [ "heroku-postgresql" ],
+}
