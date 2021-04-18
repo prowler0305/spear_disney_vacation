@@ -1,1 +1,1 @@
-web: gunicorn "myproject:create_app()"
+web: gunicorn "spear_disney:create_app()"
