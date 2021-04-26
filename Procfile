@@ -1,1 +1,1 @@
-web: gunicorn -w 4 app:spear_app
+web: gunicorn -w 4 wsgi:app
