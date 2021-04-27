@@ -31,3 +31,42 @@ body {
 .bg-white-opaque {
     background-color: rgba(255, 255, 255, 0.5);
 }
+
+.btn-purple {
+    color: purple;
+    background-color: purple;
+    border-color: purple;
+}
+
+.btn-purple:hover {
+    color: #800099;
+    background-color: #800099;
+    border-color: #800099;
+}
+
+.btn-purple:focus, .btn-purple.focus {
+    color: purple;
+    background-color: purple;
+    border-color: purple;
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 202, 44, 0.5);
+    box-shadow: 0 0 0 0.2rem rgba(255, 202, 44, 0.5);
+}
+
+.btn-purple.disabled, .btn-purple:disabled {
+    color: purple;
+    background-color: purple;
+    border-color: purple;
+}
+
+.btn-purple:not(:disabled):not(.disabled):active, .btn-purple:not(:disabled):not(.disabled).active,
+.show > .btn-purple.dropdown-toggle {
+    color: purple;
+    background-color: purple;
+    border-color: purple;
+}
+
+.btn-purple:not(:disabled):not(.disabled):active:focus, .btn-purple:not(:disabled):not(.disabled).active:focus,
+.show > .btn-purple.dropdown-toggle:focus {
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 202, 44, 0.5);
+    box-shadow: 0 0 0 0.2rem rgba(255, 202, 44, 0.5);
+}
