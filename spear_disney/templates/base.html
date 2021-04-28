@@ -18,14 +18,23 @@
 {% from 'helpers.html' import flash_alert %}
 {{ flash_alert('internal') }}
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <img src="{{ url_for('static', filename='nav_bar_mickey_head.jpg') }}" style="height: 5%; width: 5%" class="navbar-brand"></img>
+    <img src="{{ url_for('static', filename='nav_bar_mickey_head.jpg') }}" style="height: 3%; width: 3%" class="navbar-brand"></img>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav nav-pills">
             <a class="nav-link active btn-info" href="{{ url_for('home_view') }}">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-link btn-warning" href="{{ url_for('vacation_content') }}">Vacation Planning</a>
+{#            <a class="nav-link btn-warning" href="{{ url_for('vacation_content') }}">Vacation Planning</a>#}
+            <li class="nav-item dropdown">
+                <a class="nav-link btn-warning dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Vacation Planning
+                </a>
+                <div class="dropdown-menu bg-warning" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="{{ url_for('vacation_requests') }}">Vacation Requests</a>
+                    <a class="dropdown-item" href="{{ url_for('polls') }}">Polls</a>
+                </div>
+            </li>
             <a class="nav-link btn-purple" href="{{ url_for('pics_vids') }}">Pics & Vids</a>
         </div>
     </div>

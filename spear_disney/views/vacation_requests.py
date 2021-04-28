@@ -5,7 +5,7 @@ from spear_disney.forms import Suggestion
 from spear_disney.models import Suggestions, db
 
 
-class VacationContent(MethodView):
+class VacationRequests(MethodView):
     """
 
     """
@@ -33,4 +33,4 @@ class VacationContent(MethodView):
 
         db.session.commit()
 
-        return redirect(url_for("vacation_content"))
+        return redirect(url_for("vacation_requests"))
