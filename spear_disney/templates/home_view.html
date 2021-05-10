@@ -26,23 +26,30 @@
                     </p>
                 </div>
             </div>
+        </div>
+        <div>
+            <button class="btn-block btn-lg btn-info" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
+                    aria-controls="collapseExample">
+                If ready for the surprise.....CLICK ME!!!!!!
+            </button>
+        </div>
+        <div class="collapse" id="collapseExample">
             <h3 class="display-3 text-warning">Here's to a lifetime of fun, family, and memories in our new home away from home...</h3>
-        </div>
-
-        <div class="row">
-            <div class="col-6"><img src="{{url_for('static', filename='dvc_logo.jpg')}}" class="img-fluid" height="200px"></div>
-            <div class="col-6"><img src="{{url_for('static', filename='poly_resort.jpg')}}" class="img-fluid" height="200px"></div>
-        </div>
-        <hr>
-        <div class="row">
-            <div class="w-50 mx-auto">
-                <a class="text-white" href="http://distickers.com/ticker/">
-                    <img class="bg-white img-fluid" src="http://distickers.com/ticker/tickers/p07jex17xxhcvmty.png" alt="DIStickers.com Ticker"
-                         border="0" width="100%"/>
-                </a>
+            <div class="row">
+                <div class="col-6"><img src="{{url_for('static', filename='dvc_logo.jpg')}}" class="img-fluid" height="200px"></div>
+                <div class="col-6"><img src="{{url_for('static', filename='poly_resort.jpg')}}" class="img-fluid" height="200px"></div>
             </div>
+            <hr>
+            <div class="row">
+                <div class="w-50 mx-auto">
+                    <a class="text-white" href="http://distickers.com/ticker/">
+                        <img class="bg-white img-fluid" src="http://distickers.com/ticker/tickers/p07jex17xxhcvmty.png"
+                             alt="DIStickers.com Ticker" border="0" width="100%"/>
+                    </a>
+                </div>
+            </div>
+            <hr>
         </div>
-        <hr>
     </div>
 {% endblock content%}
 </body>
