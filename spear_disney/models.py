@@ -25,3 +25,28 @@ class Suggestions(db.Model):
         self.by_who = by_who
         self.suggestion = suggestion
         self.suggestion_category = suggestion_category
+
+
+class PollQuestion(db.Model):
+    """
+
+    """
+    id = db.Column(db.Integer, primary_key=True)
+    question_text = db.Column(db.String, nullable=False)
+    choices = db.relationship("PollChoices", backref="poll_question", lazy=True, uselist=False)
+
+    def __init__(self, question_text):
+        self.question_text = question_text
+
+
+class PollChoices(db.Model):
+    """
+
+    """
+    id = db.Column(db.Integer, primary_key=True)
+    question_id = db.Column(db.Integer, db.ForeignKey("poll_question.id"), nullable=False)
+    choices_text = db.Column(db.ARRAY(db.String))
+
+    def __init__(self, question_id, choices_text):
+        self.question_id = question_id
+        self.choices_text = choices_text

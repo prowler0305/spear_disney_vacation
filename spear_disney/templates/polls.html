@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% from 'helpers.html' import display_form_errors %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            {% for poll_form in poll_forms %}
+                <div class="col-auto">
+                    <form method="POST" name="Poll Question">
+                        {{ poll_form.hidden_tag() }}
+                        <div class="form-group">
+                            {{ poll_form.question.label(class="text-info") }}
+                            {{ poll_form.question(class="form-control") }}
+                        </div>
+                        {{ poll_form.submit(class='btn btn-success') }}
+                        {{ display_form_errors(poll_form) }}
+                    </form>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}

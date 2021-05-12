@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% from 'helpers.html' import display_form_errors %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-auto">
+                <form method="POST" name="add_poll">
+                    {{ add_poll_form.hidden_tag() }}
+                    <div class="form-group">
+                        {{ add_poll_form.question.label(class="text-info") }}
+                        {{ add_poll_form.question(class="form-control", size=100) }}
+                    </div>
+                    <div class="form-group">
+                        {{ add_poll_form.choices.label(class="text-info") }}
+                        {{ add_poll_form.choices(class="form-control", placeholder="Comma separated list.", size=100) }}
+                    </div>
+                    {{ add_poll_form.add(class='btn btn-success') }}
+                    {{ display_form_errors(add_poll_form) }}
+                </form>
+                {{ flash_alert("add_poll") }}
+            </div>
+        </div>
+    </div>
+{% endblock content %}
