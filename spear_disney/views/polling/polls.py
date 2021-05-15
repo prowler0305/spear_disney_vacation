@@ -17,12 +17,12 @@ class Polls(MethodView):
     def get(self):
         poll_question_list = PollQuestion.query.all()
         poll_form_list = list()
-        choices_list = list(("", ""))
         for poll_question in poll_question_list:
+            choices_list = [("", "")]
             for choice in poll_question.choices.choices_text:
                 temp_tuple = (choice, choice)
                 choices_list.append(temp_tuple)
-            poll_form_list.append(PollForm(poll_question.question_text, question_choices=poll_question.choices.choices_text))
+            poll_form_list.append(PollForm(poll_question.question_text, question_choices=choices_list))
         self.disney_template_render_dict["poll_forms"] = poll_form_list
         return self.disney_template_render_dict
 

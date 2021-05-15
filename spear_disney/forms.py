@@ -1,6 +1,10 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, SelectField, HiddenField
+from wtforms.ext.sqlalchemy.fields import QuerySelectField
 from wtforms.validators import DataRequired, InputRequired
+
+from spear_disney import db
+from spear_disney.models import PollQuestion
 
 
 class Suggestion(FlaskForm):
@@ -36,3 +40,16 @@ class AddQuestionForm(FlaskForm):
     question = StringField("Question", validators=[DataRequired()])
     choices = StringField("Choices", validators=[DataRequired()])
     add = SubmitField("Add")
+
+
+def get_current_questions():
+    return db.session.query(PollQuestion).all()
+
+
+class DisplayQuestions(FlaskForm):
+    # def __init__(self, display_question_text, **kwargs):
+    #     super(DisplayQuestions, self).__init__(**kwargs)
+    #     self.display_question = display_question_text
+
+    # display_question = SelectField(validators=[DataRequired()])
+    display_question = QuerySelectField("Existing Questions", validators=[DataRequired()], query_factory=get_current_questions, get_label="question_text")

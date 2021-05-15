@@ -4,7 +4,7 @@
 {% block content %}
     <div class="container-fluid">
         <div class="row">
-            <div class="col-auto">
+            <div class="col-6">
                 <form method="POST" name="add_poll">
                     {{ add_poll_form.hidden_tag() }}
                     <div class="form-group">
@@ -19,6 +19,17 @@
                     {{ display_form_errors(add_poll_form) }}
                 </form>
                 {{ flash_alert("add_poll") }}
+            </div>
+            <div class="col-6 text-white">
+                {{ questions.display_question.label(class="text-danger") }}
+                {{ questions.display_question(class="form-control") }}
+
+{#                {{ questions.display_question(class="form-control") }}#}
+{#                <select class="form-control" type="checkbox" id="DisplayQuestion" name="display_question">#}
+{#                    {% for question in questions.display_questions %}#}
+{#                        <option value="{{ question.question_text }}">{{ question.question_text }}</option>#}
+{#                    {% endfor %}#}
+{#                </select>#}
             </div>
         </div>
     </div>

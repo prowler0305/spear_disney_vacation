@@ -3,7 +3,7 @@ from flask import current_app as spear_app, redirect, url_for
 
 from spear_disney.common.common import Common
 from spear_disney.decorators import templated
-from spear_disney.forms import AddQuestionForm
+from spear_disney.forms import AddQuestionForm, DisplayQuestions
 from spear_disney.models import PollQuestion, PollChoices, db
 
 
@@ -22,6 +22,7 @@ class AddPoll(MethodView):
 
         :return:
         """
+        self.disney_template_render_dict["questions"] = DisplayQuestions()
         return self.disney_template_render_dict
 
     @templated()
@@ -44,3 +45,9 @@ class AddPoll(MethodView):
             return redirect(url_for("add_poll"))
 
         return self.disney_template_render_dict
+
+    def delete(self):
+        """
+        Delete a Poll Question based on its id
+        :return:
+        """
