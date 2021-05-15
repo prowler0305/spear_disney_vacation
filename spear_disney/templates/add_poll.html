@@ -21,8 +21,16 @@
                 {{ flash_alert("add_poll") }}
             </div>
             <div class="col-6 text-white">
-                {{ questions.display_question.label(class="text-danger") }}
-                {{ questions.display_question(class="form-control") }}
+                <form method="post" name="delete_poll">
+                    {{ delete_poll_form.hidden_tag() }}
+                    <div class="form-group">
+                        {{ delete_poll_form.display_question.label(class="text-danger") }}
+                        {{ delete_poll_form.display_question(class="form-control") }}
+                    </div>
+                    {{ delete_poll_form.delete(class="btn btn-danger") }}
+                    {{ display_form_errors(delete_poll_form) }}
+                </form>
+                {{ flash_alert("delete_poll") }}
             </div>
         </div>
     </div>

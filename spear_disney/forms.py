@@ -52,4 +52,6 @@ class DisplayQuestions(FlaskForm):
     #     self.display_question = display_question_text
 
     # display_question = SelectField(validators=[DataRequired()])
-    display_question = QuerySelectField("Existing Questions", validators=[DataRequired()], query_factory=get_current_questions, get_label="question_text")
+    display_question = QuerySelectField("Existing Questions", validators=[DataRequired()],
+                                        query_factory=get_current_questions, get_label="question_text")
+    delete = SubmitField("Delete")
