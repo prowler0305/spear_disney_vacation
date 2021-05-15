@@ -4,7 +4,8 @@
 {% block content %}
     <div class="container-fluid">
         <div class="row">
-            <div class="col-6">
+            <div class="col-6 text-white">
+                <p class="display-3 text-purple">Add a new Poll</p>
                 <form method="POST" name="add_poll">
                     {{ add_poll_form.hidden_tag() }}
                     <div class="form-group">
@@ -21,6 +22,7 @@
                 {{ flash_alert("add_poll") }}
             </div>
             <div class="col-6 text-white">
+                <p class="display-3 text-danger">Delete an Existing Poll</p>
                 <form method="post" name="delete_poll">
                     {{ delete_poll_form.hidden_tag() }}
                     <div class="form-group">
