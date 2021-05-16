@@ -22,7 +22,7 @@ class Polls(MethodView):
         poll_questions_list = list()
         for poll_question in poll_question_list:
             choices_list = [("", "")]
-            for choice in poll_question.choices.choices_text:
+            for choice in poll_question.choices.choices_text.strip('"{}').replace('"', '').split(","):
                 temp_tuple = (choice, choice)
                 choices_list.append(temp_tuple)
             single_poll_question_tuple = (
