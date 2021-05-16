@@ -10,9 +10,10 @@ class BaseConfig:
     THREADED = True
     # PREFERRED_URL_SCHEME = 'https'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    SQLALCHEMY_DATABASE_URI = 'postgresql://{}:{}@{}:{}/{}'.format(os.environ.get('db_user'), os.environ.get('db_pass'),
-                                                                   os.environ.get('db_url'), os.environ.get('db_port'),
-                                                                   os.environ.get('db_name'))
+    # SQLALCHEMY_DATABASE_URI = 'postgresql://{}:{}@{}:{}/{}'.format(os.environ.get('db_user'), os.environ.get('db_pass'),
+    #                                                                os.environ.get('db_url'), os.environ.get('db_port'),
+    #                                                                os.environ.get('db_name'))
+    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
 
 
 class DevelopmentConfig(BaseConfig):
