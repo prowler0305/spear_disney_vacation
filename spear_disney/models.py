@@ -49,7 +49,7 @@ class PollChoices(db.Model):
     """
     id = db.Column(db.Integer, primary_key=True)
     question_id = db.Column(db.Integer, db.ForeignKey("poll_question.id"), nullable=False)
-    choices_text = db.Column(ARRAY(db.String))
+    choices_text = db.Column(db.ARRAY(db.String))
     choices_results = db.Column(db.String)
 
     def __init__(self, question_id, choices_text, choices_results=None):
