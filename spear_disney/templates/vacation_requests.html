@@ -32,6 +32,85 @@
             </div>
         </div>
     </div>
+    <div class="container-fluid">
+        <div class="accordion" id="accordionExample">
+            <div class="card">
+                <div class="card-header bg-purple" id="headingOne">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-white" type="button" data-toggle="collapse"
+                                data-target="#magicKingdomMap">
+                            <h5>Map of Magic Kingdom</h5>
+                        </button>
+                    </h2>
+                </div>
+                <div id="magicKingdomMap" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <img src="{{url_for('static', filename='disney-magic-kingdom-map.jpg')}}" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header bg-warning" id="headingTwo">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-white collapsed" type="button" data-toggle="collapse"
+                                data-target="#epcotMap">
+                            <h5>Map of Epcot</h5>
+                        </button>
+                    </h2>
+                </div>
+                <div id="epcotMap" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <img src="{{url_for('static', filename='epcot-map.jpg')}}" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header bg-info" id="headingThree">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-white collapsed" type="button" data-toggle="collapse"
+                                data-target="#hollywoodStudiosMap">
+                            <h5>Map of HollyWood Studios</h5>
+                        </button>
+                    </h2>
+                </div>
+                <div id="hollywoodStudiosMap" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <img src="{{url_for('static', filename='disney-hollywood-studios-map.jpg')}}" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header bg-success" id="headingThree">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-white collapsed" type="button" data-toggle="collapse"
+                                data-target="#animalKingdomMap">
+                            <h5>Map of Animal Kingdom</h5>
+                        </button>
+                    </h2>
+                </div>
+                <div id="animalKingdomMap" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <img src="{{url_for('static', filename='disney-animal-kingdom-map.jpg')}}" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header bg-secondary" id="headingThree">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-white collapsed" type="button" data-toggle="collapse"
+                                data-target="#disneySpringsMap">
+                            <h5>Map of Disney Springs</h5>
+                        </button>
+                    </h2>
+                </div>
+                <div id="disneySpringsMap" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <img src="{{url_for('static', filename='disney-springs.jpg')}}" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock content%}
 </body>
 
