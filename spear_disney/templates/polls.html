@@ -5,24 +5,29 @@
     <div class="container-fluid">
         <div class="row">
             {% for poll_tuple in poll_tuples %}
-                <div class="col-auto">
-                    <form method="POST" name="Poll Question">
-                        {{ poll_tuple[0].csrf_token }}
-                        {{ poll_tuple[0].question_id(value=poll_tuple[0].poll_question_id) }}
-                        <div class="form-group">
-                            {{ poll_tuple[0].question.label(class="text-info") }}
-                            {{ poll_tuple[0].question(class="form-control") }}
+                <div class="card bg-transparent">
+                    <div class="card-body">
+                        <div class="col-auto">
+                            <form method="POST" name="Poll Question">
+                                {{ poll_tuple[0].csrf_token }}
+                                {{ poll_tuple[0].question_id(value=poll_tuple[0].poll_question_id) }}
+                                <div class="form-group">
+                                    {{ poll_tuple[0].question.label(class="text-info") }}
+                                    {{ poll_tuple[0].question(class="form-control") }}
+                                </div>
+                                {{ poll_tuple[0].submit(class='btn btn-success') }}
+                                {{ display_form_errors(poll_tuple) }}
+                            </form>
                         </div>
-                        {{ poll_tuple[0].submit(class='btn btn-success') }}
-                        {{ display_form_errors(poll_tuple) }}
-                    </form>
-                </div>
-                <div class="col-auto">
-                    {% for result_name, vote_count in poll_tuple[1].items() %}
-                        <ul class="list-group">
-                            <li class="list-group-item">{{ result_name }}<span class="badge bg-info">{{ vote_count }}</span></li>
-                        </ul>
-                    {% endfor %}
+                        <div class="col-auto">
+                            {% for result_name, vote_count in poll_tuple[1].items() %}
+                                <ul class="list-group">
+                                    <li class="list-group-item">{{ result_name }}<span
+                                            class="badge bg-info">{{ vote_count }}</span></li>
+                                </ul>
+                            {% endfor %}
+                        </div>
+                    </div>
                 </div>
             {% endfor %}
         </div>
