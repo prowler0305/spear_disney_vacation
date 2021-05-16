@@ -25,15 +25,29 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav nav-pills">
             <a class="nav-link active btn-info" href="{{ url_for('home_view') }}">Home <span class="sr-only">(current)</span></a>
-{#            <a class="nav-link btn-warning" href="{{ url_for('vacation_content') }}">Vacation Planning</a>#}
             <li class="nav-item dropdown">
-                <a class="nav-link btn-warning dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link btn-warning dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Vacation Planning
                 </a>
                 <div class="dropdown-menu bg-warning" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="{{ url_for('vacation_requests') }}">Vacation Requests</a>
                     <a class="dropdown-item" href="{{ url_for('polls') }}">Polls</a>
                     <a class="dropdown-item" href="{{ url_for('add_poll') }}">Add Poll</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link btn-danger dropdown-toggle" href="#" id="diningLinkDropdownMenu" role="button"
+                   data-toggle="dropdown">
+                    Dining Menus
+                </a>
+                <div class="dropdown-menu bg-danger" aria-labelledby="diningLinkDropdownMenu">
+                    <a class="dropdown-item text-white" href="https://allears.net/dining/menu/search/all/magic-kingdom/all/all/" target="_blank">Magic Kingdom</a>
+                    <a class="dropdown-item text-white" href="https://allears.net/dining/menu/search/all/hollywood-studios/all/all/" target="_blank">Hollywood Studios</a>
+                    <a class="dropdown-item text-white" href="https://allears.net/dining/menu/search/all/epcot/all/all/" target="_blank">EPCOT</a>
+                    <a class="dropdown-item text-white" href="https://allears.net/dining/menu/search/all/animal-kingdom/all/all/" target="_blank">Animal Kingdom</a>
+                    <a class="dropdown-item text-white" href="https://allears.net/dining/menu/search/all/disney-springs/all/all/" target="_blank">Disney Springs</a>
+                    <a class="dropdown-item text-white" href="https://allears.net/dining/menu/search/all/resorts/all/all/" target="_blank">Resort Menus</a>
                 </div>
             </li>
             <a class="nav-link btn-purple" href="{{ url_for('pics_vids') }}">Pics & Vids</a>
