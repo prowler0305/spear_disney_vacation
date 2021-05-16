@@ -19,15 +19,11 @@ class Suggestion(FlaskForm):
     suggestion_category = SelectField("Category",
                                       choices=[("", ""),
                                                ("rides_attractions", "Rides/Attractions"),
-                                               ("dining", "Dining")],
+                                               ("dining", "Dining"), ("souvenirs", "Souvenirs")],
                                       validators=[InputRequired()])
     suggestion = StringField("Suggestion", validators=[DataRequired()])
     submit = SubmitField("Submit")
     delete_entry = SubmitField("Delete")
-
-
-def get_poll_question_choices():
-    return db.session.query(PollChoices).all()
 
 
 class PollForm(FlaskForm):
@@ -36,9 +32,6 @@ class PollForm(FlaskForm):
         self.poll_question_id = poll_question_id
         self.question.label.text = label_text
         self.question.choices = question_choices
-    # question = QuerySelectField(validators=[DataRequired()], query_factory=get_poll_question_choices,
-    #                             get_label="choices_text")
-    # question = QuerySelectField(validators=[DataRequired()], get_label="choices_text")
     question_id = HiddenField()
     question = SelectField(default="", validators=[DataRequired()])
     submit = SubmitField("Submit")
