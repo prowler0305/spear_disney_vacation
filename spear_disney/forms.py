@@ -14,8 +14,8 @@ class Suggestion(FlaskForm):
                                   ('christian', 'Christian'),
                                   ('sarah', 'Sarah'),
                                   ("mom", "Mom"),
-                                  ("dad", "Dad")],
-                                  ("kensi", "Kensi")
+                                  ("dad", "Dad"),
+                                  ("kensi", "Kensi")],
                          default="", validators=[InputRequired()])
     suggestion_category = SelectField("Category",
                                       choices=[("", ""),
