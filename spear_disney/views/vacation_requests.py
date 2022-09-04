@@ -16,6 +16,7 @@ class VacationRequests(MethodView):
         self.disney_template_render_dict["sarah_suggestions"] = Suggestions.query.filter_by(by_who="sarah").all()
         self.disney_template_render_dict["mom_suggestions"] = Suggestions.query.filter_by(by_who="mom").all()
         self.disney_template_render_dict["dad_suggestions"] = Suggestions.query.filter_by(by_who="dad").all()
+        self.disney_template_render_dict["kensi_suggestions"] = Suggestions.query.filter_(by_who="kensi").all()
 
     @templated()
     def get(self):
