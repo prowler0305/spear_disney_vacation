@@ -127,4 +127,36 @@
             </tbody>
         </table>
     </div>
+    <div class="col-6">
+        <h3 class="text-purple">Kensi Suggestions</h3>
+        <table class="table-bordered border-purple"
+               data-toggle="table">
+            <thead class="thead-dark">
+            <tr>
+                <th class="text-purple" data-field="suggestion_category" data-sortable="true" scope="col">
+                    Category
+                </th>
+                <th class="text-purple" data-field="suggestion" data-sortable="true" scope="col">
+                    Suggestion
+                </th>
+                <th class="text-purple" data-field="delete_entry" scope="col">Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for suggestion_item in kensi_suggestions %}
+                <tr>
+                    <td>{{ suggestion_item.suggestion_category | title | replace("_", "/") }}</td>
+                    <td>{{ suggestion_item.suggestion }}</td>
+                    <td>
+                        <form method="post">
+                            {{ suggest_form.csrf_token }}
+                            {{ suggest_form.delete_id(value=suggestion_item.id) }}
+                            {{ suggest_form.delete_entry(class="btn btn-sm btn-danger") }}
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </div>
